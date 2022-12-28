@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9CB81EB0-6537-4273-AA1E-AE43AB9C5AAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{34983044-4B3C-45A1-9575-0B046F4C1B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendSms.Net", "src\SendSms.Net\SendSms.Net.csproj", "{3460DAD8-0792-4B7E-998F-ABAB223FD4F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendSms.Net.Tests", "test\SendSms.Net.Tests\SendSms.Net.Tests.csproj", "{3870A5F0-8E1E-4920-A022-BB29F9C8EF9B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B4E19FF-5AD3-4B17-92DE-1EA9C50B5F04}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3460DAD8-0792-4B7E-998F-ABAB223FD4F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3460DAD8-0792-4B7E-998F-ABAB223FD4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3460DAD8-0792-4B7E-998F-ABAB223FD4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3460DAD8-0792-4B7E-998F-ABAB223FD4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3870A5F0-8E1E-4920-A022-BB29F9C8EF9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3870A5F0-8E1E-4920-A022-BB29F9C8EF9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3870A5F0-8E1E-4920-A022-BB29F9C8EF9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3870A5F0-8E1E-4920-A022-BB29F9C8EF9B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3460DAD8-0792-4B7E-998F-ABAB223FD4F0} = {9CB81EB0-6537-4273-AA1E-AE43AB9C5AAB}
+		{3870A5F0-8E1E-4920-A022-BB29F9C8EF9B} = {34983044-4B3C-45A1-9575-0B046F4C1B91}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24F85150-C1EA-46C5-8806-5D5774D10406}
+	EndGlobalSection
+EndGlobal
