@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Constants\" />
     <Folder Include="Contracts\" />
     <Folder Include="Internal\" />
+    <Folder Include="Extensions\" />
     <Folder Include="Requests\" />
   </ItemGroup>
 
