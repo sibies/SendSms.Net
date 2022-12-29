@@ -13,7 +13,7 @@ public class JsonHttpClient : HttpClient
         var result = await response.Content.ReadAsStringAsync();
 
         return !result.Contains("error")
-            ? JsonConverter.DeserializeObject<T>(result)
+            ? JsonConverter.Instance.DeserializeObject<T>(result)
             : default;
     }
 
@@ -25,13 +25,13 @@ public class JsonHttpClient : HttpClient
         var result = await response.Content.ReadAsStringAsync();
 
         return !result.Contains("error")
-            ? JsonConverter.DeserializeObject<List<T>>(result)
+            ? JsonConverter.Instance.DeserializeObject<List<T>>(result)
             : Enumerable.Empty<T>();
     }
 
     private async Task<TR> PostAsync<T, TR>(string uri, T data)
     {
-        var content = new StringContent(JsonConverter.SerializeObject(data), Encoding.UTF8, MediaType);
+        var content = new StringContent(JsonConverter.Instance.SerializeObject(data), Encoding.UTF8, MediaType);
 
         var response = await PostAsync(new Uri(uri), content);
         if (!response.IsSuccessStatusCode) return default;
@@ -39,7 +39,7 @@ public class JsonHttpClient : HttpClient
         var result = await response.Content.ReadAsStringAsync();
         if (result.Contains("error")) return default;
 
-        var output = JsonConverter.DeserializeObject<TR>(result);
+        var output = JsonConverter.Instance.DeserializeObject<TR>(result);
         return output;
     }
 }

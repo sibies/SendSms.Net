@@ -1,21 +1,41 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Copyright>Copyright © Sibies Soft</Copyright>
+		<Company>Sibies Soft</Company>
+		<Authors>Sibies Soft</Authors>
+		<RepositoryUrl>https://github.com/sibies/SendSms.Net</RepositoryUrl>
+		<PackageTags>sms sendsms sendsms.ro</PackageTags>
+		<NeutralLanguage>ro</NeutralLanguage>
+		<PackageProjectUrl>www.sibies.ro</PackageProjectUrl>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<SignAssembly>False</SignAssembly>
 
-  <ItemGroup>
-    <Folder Include="Contracts\" />
-    <Folder Include="Internal\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Requests\" />
-  </ItemGroup>
+		<PackageIcon>logo.png</PackageIcon>
+		<Description>Modul .Net pentru integrarea cu sendSMS.ro https://www.sendsms.ro/</Description>
+		<Version>1.0.0.0</Version>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Users\Iulian Alexe\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+	  <None Include="..\..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\..\logo.png">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Include="..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 </Project>

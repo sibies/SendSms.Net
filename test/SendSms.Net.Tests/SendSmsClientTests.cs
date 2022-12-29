@@ -2,10 +2,11 @@ using FluentAssertions;
 using SendSms.Net.Contracts;
 using SendSms.Net.Requests;
 using SendSms.Net.Responses;
+using Xunit;
 
 namespace SendSms.Net.Tests;
 
-[TestClass]
+
 public class SendSmsClientTests
 {
     private readonly ISendSmsClient _client;
@@ -14,24 +15,24 @@ public class SendSmsClientTests
     {
         var config = new SendSmsConfigurations
         {
-            Username = "",
-            Password = "",
+            Username = "devitsoftcons",
+            Password = "FrIp1477upmhbk83rqvslx75ptvmdpjyn994q8249y76fgn0",
         };
         _client = new SendSmsClient(config);
     }
-    [TestMethod]
+    [Fact]
     public async Task Test_Ping()
     {
         var response = await _client.PingAsync();
         response.Status.Should().Be(ResponseStatusCode.api_result_ok);
     }
 
-    [TestMethod]
+    [Fact]
     public async Task Test_SendMessage()
     {
         var request = new SendMessageRequest
         {
-            To = "",
+            To = "40743331580",
             Text = "Sibies Soft"
         };
 
