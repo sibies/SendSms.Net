@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using SendSms.Net.Requests;
+using SendSms.Net.Responses;
+using System.Text;
 
 namespace SendSms.Net.Internal;
 
@@ -6,7 +8,7 @@ public class JsonHttpClient : HttpClient
 {
     public static string MediaType => "application/json";
 
-    protected async Task<T?> GetAsync<T>(string uri)
+    protected async Task<T> GetAsync<T>(string uri) where T : ResponseBase
     {
         var response = await GetAsync(new Uri(uri));
         if (!response.IsSuccessStatusCode) return default;
@@ -29,7 +31,7 @@ public class JsonHttpClient : HttpClient
             : Enumerable.Empty<T>();
     }
 
-    private async Task<TR> PostAsync<T, TR>(string uri, T data)
+    private async Task<TR> PostAsync<T, TR>(string uri, T data) where T: RequestBase where TR : ResponseBase
     {
         var content = new StringContent(JsonConverter.Instance.SerializeObject(data), Encoding.UTF8, MediaType);
 
