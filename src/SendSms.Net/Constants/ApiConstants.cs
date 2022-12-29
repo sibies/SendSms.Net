@@ -10,11 +10,4 @@ public static class ApiConstants
     public const string BasePingApiPath = BaseApiPath + "ping";
     public const string BaseMessageSendApiPath = BaseApiPath + "message_send";
 
-    public class Parameters
-    {
-        public class Keys
-        {
-
-        }
-    }
 }

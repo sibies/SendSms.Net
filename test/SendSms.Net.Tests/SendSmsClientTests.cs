@@ -1,4 +1,5 @@
 using FluentAssertions;
+using SendSms.Net.Contracts;
 using SendSms.Net.Requests;
 using SendSms.Net.Responses;
 
@@ -7,26 +8,34 @@ namespace SendSms.Net.Tests;
 [TestClass]
 public class SendSmsClientTests
 {
+    private readonly ISendSmsClient _client;
+
+    public SendSmsClientTests()
+    {
+        var config = new SendSmsConfigurations
+        {
+            Username = "",
+            Password = "",
+        };
+        _client = new SendSmsClient(config);
+    }
     [TestMethod]
     public async Task Test_Ping()
     {
-        var client = new SendSmsClient();
-        var response = await client.PingAsync();
+        var response = await _client.PingAsync();
         response.Status.Should().Be(ResponseStatusCode.api_result_ok);
     }
-
 
     [TestMethod]
     public async Task Test_SendMessage()
     {
-        var client = new SendSmsClient();
         var request = new SendMessageRequest
         {
             To = "",
-            Text = "test"
+            Text = "Sibies Soft"
         };
 
-        var response = await client.SendMessageAsync(request);
+        var response = await _client.SendMessageAsync(request);
         response.Status.Should().Be(ResponseStatusCode.api_result_ok);
     }
 }
