@@ -17,7 +17,7 @@ public class SendSmsClient: JsonHttpClient, ISendSmsClient
     }
     public async Task<ResponseBase> PingAsync()
     {
-        var response = await GetAsync<ResponseBase>(ApiConstants.BasePingApiPath);
+        var response = await GetAsync<ResponseBase>(ApiConstants.Other.PingApiPath);
         return response;
     }
 
@@ -36,7 +36,7 @@ public class SendSmsClient: JsonHttpClient, ISendSmsClient
         var urlParams = message.ToParameters();
         var queryString = new QueryParamBuilder(urlParams).Build();
 
-        var response = await GetAsync<SendMessageResponse>(ApiConstants.BaseMessageSendApiPath + queryString);
+        var response = await GetAsync<SendMessageResponse>(ApiConstants.Messages.MessageSendApiPath + queryString);
         return response;
     }
 }
