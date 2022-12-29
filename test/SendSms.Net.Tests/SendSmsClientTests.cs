@@ -15,8 +15,8 @@ public class SendSmsClientTests
     {
         var config = new SendSmsConfigurations
         {
-            Username = "devitsoftcons",
-            Password = "FrIp1477upmhbk83rqvslx75ptvmdpjyn994q8249y76fgn0",
+            Username = "",
+            Password = "",
         };
         _client = new SendSmsClient(config);
     }
@@ -32,7 +32,7 @@ public class SendSmsClientTests
     {
         var request = new SendMessageRequest
         {
-            To = "40743331580",
+            To = "",
             Text = "Sibies Soft"
         };
 
